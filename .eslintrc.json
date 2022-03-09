@@ -24,6 +24,10 @@
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function" }
+    ],
     "prettier/prettier": ["error", { "endOfLine": "auto" }]
   }
 }
