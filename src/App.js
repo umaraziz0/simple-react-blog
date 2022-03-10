@@ -1,15 +1,25 @@
 import './App.css';
-import Navbar from './Navbar';
+import Blogs from './components/BlogList';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <div>
       <Navbar />
 
-      <div className="container max-w-7xl my-6 mx-auto px-2 sm:px-6 lg:px-8">
-        <div>
-          <h1 className="font-bold text-2xl">Homepage</h1>
+      <div className="container max-w-7xl my-6 mx-auto px-2 space-y-8 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
+          <h1 className="font-bold text-2xl text-blue-900">Homepage</h1>
+
+          <button
+            type="button"
+            className="px-3 py-1 bg-blue-500 text-white rounded"
+          >
+            New Post
+          </button>
         </div>
+
+        <Blogs />
       </div>
     </div>
   );
