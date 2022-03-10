@@ -25,9 +25,11 @@
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
     "react/function-component-definition": [
-      "error",
+      1,
       { "namedComponents": "arrow-function" }
     ],
+    "jsx-a11y/anchor-is-valid": "warn",
+    "no-unused-vars": "warn",
     "prettier/prettier": ["error", { "endOfLine": "auto" }]
   }
 }
