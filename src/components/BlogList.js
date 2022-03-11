@@ -24,10 +24,14 @@ const Blogs = () => {
     },
   ]);
 
+  const handleDelete = (id) => {
+    setBlogs(blogs.filter((blog) => blog.id !== id));
+  };
+
   return (
     <div>
       {blogs.map((blog) => (
-        <BlogItem blog={blog} />
+        <BlogItem blog={blog} handleDelete={handleDelete} />
       ))}
     </div>
   );
