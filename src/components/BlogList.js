@@ -1,30 +1,17 @@
-import { useEffect, useState } from 'react';
 import BlogItem from './BlogItem';
+import useFetch from '../useFetch';
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const {
+    data: blogs,
+    isLoading,
+    error,
+  } = useFetch('http://localhost:8000/blogs');
 
   const handleDelete = (id) => {
-    setBlogs(blogs.filter((blog) => blog.id !== id));
+    console.log(id);
+    // setBlogs(blogs.filter((blog) => blog.id !== id));
   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('http://localhost:8000/blogs')
-        .then((res) => {
-          if (!res.ok) throw Error('Something went wrong');
-
-          return res.json();
-        })
-        .then((data) => {
-          setBlogs(data);
-        })
-        .catch((err) => setError(err.message))
-        .finally(() => setIsLoading(false));
-    }, 1000);
-  }, []);
 
   return (
     <div className="">
@@ -45,7 +32,7 @@ const Blogs = () => {
         blogs.map((blog) => (
           <BlogItem blog={blog} handleDelete={handleDelete} key={blog.id} />
         ))}
-      {error && <h1 className="text-center text-xl text-white">{error}</h1>}
+      {error && <h1 className="text-center text-xl text-white">{error}.</h1>}
     </div>
   );
 };
