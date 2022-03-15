@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 import { TrashIcon } from '@heroicons/react/solid';
+import { Link } from 'react-router-dom';
 
 const BlogItem = ({ blog, handleDelete }) => {
   return (
-    <div className="border border-gray-300 my-4 rounded-lg hover:shadow ">
+    <div className="my-4 rounded-lg border border-gray-300 hover:shadow ">
       <div className="px-6 py-4">
         <div className="flex justify-between">
-          <div>
-            <div className="font-bold text-lg text-white mb-2">
+          <Link to={`/blogs/${blog.id}`}>
+            <div className="mb-2 text-lg font-bold text-white">
               {blog.title}
             </div>
-            <p className="text-gray-400 text-sm mb-4">by: {blog.author}</p>
+            <p className="mb-4 text-sm text-gray-400">by: {blog.author}</p>
             <p className="text-gray-300">{blog.body}</p>
-          </div>
+          </Link>
           <div className="flex-shrink-0">
             <button
               type="button"
@@ -20,7 +21,7 @@ const BlogItem = ({ blog, handleDelete }) => {
                 handleDelete(blog.id);
               }}
             >
-              <TrashIcon className="text-white block h-6 w-6" />
+              <TrashIcon className="block h-6 w-6 text-white" />
             </button>
           </div>
         </div>

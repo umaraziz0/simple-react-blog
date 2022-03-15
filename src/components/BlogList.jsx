@@ -1,4 +1,5 @@
 import BlogItem from './BlogItem';
+import LoadingBlog from './LoadingBlog';
 import useFetch from '../useFetch';
 
 const Blogs = () => {
@@ -9,25 +10,12 @@ const Blogs = () => {
   } = useFetch('http://localhost:8000/blogs');
 
   const handleDelete = (id) => {
-    console.log(id);
-    // setBlogs(blogs.filter((blog) => blog.id !== id));
+    useFetch(`http://localhost:8000/blogs/${id}`, { method: 'DELETE' });
   };
 
   return (
     <>
-      {isLoading && (
-        <div className="mt-4 w-full rounded-md border">
-          <div className="px-8 py-6">
-            <div className="flex h-full animate-pulse flex-row items-center justify-start space-x-5">
-              <div className="flex w-full flex-col gap-y-3">
-                <div className="h-6 w-72 rounded-md bg-gray-300" />
-                <div className="h-6 w-32 rounded-md bg-gray-300" />
-                <div className="mt-8 h-24 w-full rounded-md bg-gray-300" />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {isLoading && <LoadingBlog />}
       {blogs &&
         blogs.map((blog) => (
           <BlogItem blog={blog} handleDelete={handleDelete} key={blog.id} />
