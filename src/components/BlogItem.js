@@ -3,10 +3,7 @@ import { TrashIcon } from '@heroicons/react/solid';
 
 const BlogItem = ({ blog, handleDelete }) => {
   return (
-    <div
-      key={blog.id}
-      className="border border-gray-300 rounded-lg my-4 hover:shadow "
-    >
+    <div className="border border-gray-300 my-4 rounded-lg hover:shadow ">
       <div className="px-6 py-4">
         <div className="flex justify-between">
           <div>
@@ -33,7 +30,7 @@ const BlogItem = ({ blog, handleDelete }) => {
 };
 
 BlogItem.propTypes = {
-  blog: PropTypes.shape.isRequired,
+  blog: PropTypes.shape().isRequired,
   handleDelete: PropTypes.func.isRequired,
 };
 
