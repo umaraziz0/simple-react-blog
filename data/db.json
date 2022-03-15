@@ -1,12 +1,6 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "author": "John Doe",
-      "title": "Iste quaerat nulla molestiae nobis soluta ipsum.",
-      "body": "Maiores in perferendis dolorum qui commodi tenetur. Dolor ut alias quas omnis. Dolorum et vel sit voluptates facilis pariatur sit laboriosam. Enim impedit omnis blanditiis eos facilis. Ut debitis sunt delectus error autem voluptate maxime velit dolorem. Assumenda neque velit quae earum ut magni aut dicta eligendi. Ipsam praesentium totam saepe aliquid ratione. Voluptate quidem ipsum nulla. Quia doloribus blanditiis aut dolores cumque. Voluptas et maiores velit necessitatibus dolorem. Aliquid eligendi laboriosam. Quia minus beatae sit rerum ex laborum. Atque sunt quia culpa et. Quam eos aut rerum. Modi non labore rerum."
-    },
-    {
       "id": 2,
       "author": "Jane Doe",
       "title": "Qui quia quisquam quisquam.",
@@ -19,94 +13,10 @@
       "body": "Perferendis ut voluptates hic. Voluptatem iusto enim quasi. Rem ut reiciendis voluptas error. Animi omnis odio dignissimos explicabo magnam. Quas quidem quam adipisci non maxime error voluptas nihil non. Quia quas harum et qui quo dolorem voluptate sit iste. Soluta blanditiis quia magni dolores necessitatibus. Tempore qui sit dolores ut explicabo incidunt eum saepe. Aut omnis distinctio accusamus. Voluptas illum accusantium sint dolorem id doloribus. Officiis est minima necessitatibus deleniti ut est quia repellendus ratione. Libero consequatur tempora autem perferendis non. Aliquid in ut ratione aut eos quisquam consequatur. Ut occaecati debitis est dolorem saepe esse est. Iusto fugit eius impedit. Molestiae qui odio enim fuga aut."
     },
     {
-      "title": "Jordan Mcdonald",
-      "author": "Timon Riggs",
-      "body": "Corporis similique e",
+      "title": "Lorem Ipsum",
+      "author": "Patience Dunlap",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit obcaecati alias, nesciunt, quis blanditiis quod architecto harum tempora et asperiores porro doloribus, ad voluptate dolor fugiat consectetur provident velit! Perspiciatis.",
       "id": 4
-    },
-    {
-      "title": "Eugenia Moran",
-      "author": "Carl Clements",
-      "body": "Voluptatum autem eiu",
-      "id": 5
-    },
-    {
-      "title": "Prescott Page",
-      "author": "Gareth Pennington",
-      "body": "Quo dolore sunt quib",
-      "id": 6
-    },
-    {
-      "title": "Vielka Cannon",
-      "author": "Teagan Byers",
-      "body": "Fugiat eu mollitia ",
-      "id": 7
-    },
-    {
-      "title": "Oleg Farley",
-      "author": "Kylan Delgado",
-      "body": "Pariatur Tempor atq",
-      "id": 8
-    },
-    {
-      "title": "Oleg Farley",
-      "author": "Kylan Delgado",
-      "body": "Pariatur Tempor atq",
-      "id": 9
-    },
-    {
-      "title": "Gregory Marshall",
-      "author": "Driscoll Tucker",
-      "body": "In enim dolor sit q",
-      "id": 10
-    },
-    {
-      "title": "Aretha Erickson",
-      "author": "Shellie Hobbs",
-      "body": "Qui hic proident ve",
-      "id": 11
-    },
-    {
-      "title": "Natalie Schroeder",
-      "author": "Brynn Flores",
-      "body": "Dolores nesciunt iu",
-      "id": 12
-    },
-    {
-      "title": "Imani Ford",
-      "author": "Lael Banks",
-      "body": "Porro accusamus even",
-      "id": 13
-    },
-    {
-      "title": "Shana Stone",
-      "author": "Yardley Cantrell",
-      "body": "Eos do eum rerum ut ",
-      "id": 14
-    },
-    {
-      "title": "Kelly White",
-      "author": "Hope Pacheco",
-      "body": "At aute quis rerum e",
-      "id": 15
-    },
-    {
-      "title": "Preston Walls",
-      "author": "Eleanor Wade",
-      "body": "Temporibus dolores m",
-      "id": 16
-    },
-    {
-      "title": "Quail Combs",
-      "author": "Rahim Conrad",
-      "body": "Recusandae Dolore i",
-      "id": 17
-    },
-    {
-      "title": "Gloria Kerr",
-      "author": "Emma Henry",
-      "body": "Consequatur volupta",
-      "id": 18
     }
   ]
 }

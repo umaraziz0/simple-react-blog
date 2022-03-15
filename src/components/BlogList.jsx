@@ -9,17 +9,10 @@ const Blogs = () => {
     error,
   } = useFetch('http://localhost:8000/blogs');
 
-  const handleDelete = (id) => {
-    useFetch(`http://localhost:8000/blogs/${id}`, { method: 'DELETE' });
-  };
-
   return (
     <>
       {isLoading && <LoadingBlog />}
-      {blogs &&
-        blogs.map((blog) => (
-          <BlogItem blog={blog} handleDelete={handleDelete} key={blog.id} />
-        ))}
+      {blogs && blogs.map((blog) => <BlogItem blog={blog} key={blog.id} />)}
       {error && (
         <h1 className="mt-4 text-center text-xl text-white">{error}.</h1>
       )}

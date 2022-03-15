@@ -48,9 +48,10 @@ const Create = () => {
         });
       })
       .then(() => {
-        navigate(-1);
-      })
-      .finally(() => setIsLoading(false));
+        setIsLoading(false);
+
+        navigate('/');
+      });
   };
 
   return (
