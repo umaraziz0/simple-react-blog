@@ -1,38 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import BlogItem from './BlogItem';
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState([
-    {
-      id: 1,
-      author: 'John Doe',
-      title: 'Iste quaerat nulla molestiae nobis soluta ipsum.',
-      body: 'Quam natus quibusdam quia incidunt dignissimos. Quia qui modi autem aliquid accusamus sunt alias. Quia rerum quis vero consequuntur iure.',
-    },
-    {
-      id: 2,
-      author: 'Jane Doe',
-      title: 'Qui quia quisquam quisquam.',
-      body: 'Vel qui vel velit. Asperiores enim ipsam hic voluptas. Sit officia eum cupiditate sunt omnis voluptatem. Tenetur et necessitatibus porro in et omnis earum repudiandae. Et quia ut nemo eos.',
-    },
-    {
-      id: 3,
-      author: 'Caroline Gislason V',
-      title:
-        'Corrupti quis eum corrupti omnis reiciendis dolores et dolorem incidunt.',
-      body: 'Consequatur nemo a. Aperiam tempora in alias vel ut. Perferendis officiis blanditiis a itaque similique non ducimus. Cumque aut iure eius rem aperiam autem distinctio sit. Veniam molestias vitae assumenda consequatur debitis sunt velit repudiandae officia. Eos quia praesentium commodi accusamus et.',
-    },
-  ]);
+  const [blogs, setBlogs] = useState(null);
 
   const handleDelete = (id) => {
     setBlogs(blogs.filter((blog) => blog.id !== id));
   };
 
+  useEffect(() => {
+    fetch('http://localhost:8000/blogs')
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, []);
+
   return (
     <div>
-      {blogs.map((blog) => (
-        <BlogItem blog={blog} handleDelete={handleDelete} />
-      ))}
+      {blogs &&
+        blogs.map((blog) => (
+          <BlogItem blog={blog} handleDelete={handleDelete} />
+        ))}
     </div>
   );
 };
