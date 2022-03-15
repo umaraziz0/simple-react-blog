@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import useFetch from '../useFetch';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -8,6 +8,8 @@ const Create = () => {
   const [body, setBody] = useState('');
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +24,33 @@ const Create = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(blog),
-    }).finally(() => setIsLoading(false));
+    })
+      .then(async (res) => {
+        if (!res.ok) throw Error('Something went wrong');
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 1500,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          },
+        });
+
+        await Toast.fire({
+          icon: 'success',
+          title: 'Successfully created a new post.',
+          color: '#fff',
+          background: '#1e293b',
+        });
+      })
+      .then(() => {
+        navigate(-1);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -102,7 +130,7 @@ const Create = () => {
             {isLoading && (
               <button
                 type="submit"
-                className="flex w-36 items-center justify-center gap-3  rounded bg-blue-500 px-3 py-2 text-white"
+                className="flex w-36 items-center justify-center gap-3  rounded bg-blue-500 px-3 py-2 text-white opacity-50"
                 disabled
               >
                 <div
