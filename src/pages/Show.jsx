@@ -23,10 +23,11 @@ const Show = () => {
           </button>
         </Link>
       </div>
-      <div className="w-full rounded border border-white">
-        <div className="px-8 py-6">
-          {isLoading && <LoadingBlog />}
-          {blog && (
+      {isLoading && <LoadingBlog />}
+
+      {blog && (
+        <div className="w-full rounded border border-white">
+          <div className="px-8 py-6">
             <div>
               <h1 className="mb-4 text-xl font-bold text-white">
                 {blog.title}
@@ -34,12 +35,13 @@ const Show = () => {
               <p className="mb-4 text-gray-400">by: {blog.author}</p>
               <p className="text-white">{blog.body}</p>
             </div>
-          )}
-          {error && (
-            <h1 className="mt-4 text-center text-xl text-white">{error}.</h1>
-          )}
+          </div>
         </div>
-      </div>
+      )}
+
+      {error && (
+        <h1 className="mt-4 text-center text-xl text-white">{error}.</h1>
+      )}
     </>
   );
 };

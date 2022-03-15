@@ -1,6 +1,6 @@
 const LoadingBlog = () => {
   return (
-    <div className="mt-4 w-full rounded-md border">
+    <div className="mt-4 w-full rounded-lg border">
       <div className="px-8 py-6">
         <div className="flex h-full animate-pulse flex-row items-center justify-start space-x-5">
           <div className="flex w-full flex-col gap-y-3">
